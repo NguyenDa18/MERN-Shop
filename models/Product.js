@@ -15,7 +15,7 @@ const ProductSchema = new mongoose.Schema({
   sku: {
     type: String,
     unique: true,
-    default: shortid.generate(),
+    default: shortid.generate,
   },
   description: {
     type: String,
@@ -29,3 +29,4 @@ const ProductSchema = new mongoose.Schema({
 
 // check if model exists or use existing one
 export default mongoose.models.Product || mongoose.model('Product', ProductSchema);
+// export default mongoose.model('Product', ProductSchema);

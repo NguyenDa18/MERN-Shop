@@ -3,4 +3,5 @@ node_modules
 
 dist
 next.config.*
+next.config.js
 # now.json
