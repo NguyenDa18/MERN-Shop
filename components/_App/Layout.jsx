@@ -19,7 +19,7 @@ function Layout({ children }) {
         <title>MERN Shop</title>
       </Head>
       <Header />
-      <Container text style={{ paddingTop: '1em' }}>
+      <Container text style={{ paddingTop: '5em' }}>
         {children}
       </Container>
     </>
