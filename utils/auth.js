@@ -5,4 +5,3 @@ export const handleLogin = (token) => {
   cookie.set('token', token);
   Router.push('/account');
 };
-
