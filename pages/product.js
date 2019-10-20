@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+import { Card, Divider } from 'semantic-ui-react'
 import AddProductToCart from '../components/Product/AddProductToCart'
 import ProductAttributes from '../components/Product/ProductAttributes'
 import ProductSummary from '../components/Product/ProductSummary'
@@ -7,11 +8,12 @@ import ProductSummary from '../components/Product/ProductSummary'
 import baseUrl from '../utils/baseUrl'
 
 const Product = ({ product }) => (
-  <>
+  <div>
     <h1>{product.name}</h1>
     <ProductSummary {...product} />
+    <Divider />
     <ProductAttributes {...product} />
-  </>
+  </div>
 )
 
 Product.getInitialProps = async ({ query: { _id } }) => {
