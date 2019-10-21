@@ -7,7 +7,7 @@ function CartItemList() {
     <Segment secondary color="teal" inverted textAlign="center" placeholder>
       <Header icon>
         <Icon name="shopping basket" />
-        No items in your cart...yet. <Link href="/"> Add some!</Link>
+        No items in your cart...yet. <Link href="/"><a> Add some!</a></Link>
       </Header>
       {user ? (
         <div>

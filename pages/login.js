@@ -38,11 +38,6 @@ function Login() {
       const payload = { ...user }
       const response = await axios.post(url, payload)
       handleLogin(response)
-
-
-      console.log(user)
-      // make request to sign up user
-
     }
     catch (error) {
       catchErrors(error, setError)
@@ -52,7 +47,6 @@ function Login() {
     }
 
   }
-
 
   return (
     <>

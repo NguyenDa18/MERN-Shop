@@ -14,8 +14,7 @@ const isActive = (route) => {
   return route === router.pathname
 }
 
-const Header = () => {
-  const user = true
+const Header = ({ user }) => {
 
   return (
     <Menu id="menu" stackable fluid inverted compact>
@@ -70,10 +69,7 @@ const Header = () => {
             </Menu.Item>
               </Link>
             </>
-
           )}
-
-
       </Container>
     </Menu>
   )
