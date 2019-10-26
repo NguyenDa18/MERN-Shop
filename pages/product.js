@@ -7,12 +7,12 @@ import ProductSummary from '../components/Product/ProductSummary'
 
 import baseUrl from '../utils/baseUrl'
 
-const Product = ({ product }) => (
+const Product = ({ product, user }) => (
   <div>
     <h1>{product.name}</h1>
     <ProductSummary {...product} />
     <Divider />
-    <ProductAttributes {...product} />
+    <ProductAttributes user={user} {...product} />
   </div>
 )
 

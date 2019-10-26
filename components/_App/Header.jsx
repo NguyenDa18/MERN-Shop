@@ -4,6 +4,7 @@ import {
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router'
 import NProgress from 'nprogress'
+import { isRootOrAdmin, handleLogout } from '../../utils/auth'
 
 Router.onRouteChangeStart = () => NProgress.start()
 Router.onRouteChangeComplete = () => NProgress.done()
@@ -14,9 +15,7 @@ const isActive = (route) => {
   return route === router.pathname
 }
 
-const Header = ({ user }) => {
-
-  return (
+const Header = ({ user }) => (
     <Menu id="menu" stackable fluid inverted compact>
       <Container text>
         <Link href="/">
@@ -31,12 +30,12 @@ const Header = ({ user }) => {
             Cart
           </Menu.Item>
         </Link>
-        {user && (
+        {user && isRootOrAdmin(user) && (
           <Link href="/create">
             <Menu.Item header active={isActive('/create')}>
               <Icon name="add square" size="large" />
               Create
-                  </Menu.Item>
+            </Menu.Item>
           </Link>
 
         )}
@@ -46,33 +45,33 @@ const Header = ({ user }) => {
               <Menu.Item header active={isActive('/account')}>
                 <Icon name="user" size="large" />
                 Account
-                    </Menu.Item>
+              </Menu.Item>
             </Link>
-            <Menu.Item header >
-              <Icon name="sign out" size="large" />
-              Logout
-            </Menu.Item>
+            <Link href="/signout">
+              <Menu.Item onClick={handleLogout} header >
+                <Icon name="sign out" size="large" />
+                Logout
+              </Menu.Item>
+            </Link>
           </>
-
         ) : (
             <>
               <Link href="/login">
                 <Menu.Item header active={isActive('/login')}>
                   <Icon name="sign in" size="large" />
                   Login
-            </Menu.Item>
+                </Menu.Item>
               </Link>
               <Link href="/signup">
                 <Menu.Item header active={isActive('/signup')}>
                   <Icon name="signup" size="large" />
                   Signup
-            </Menu.Item>
+                </Menu.Item>
               </Link>
             </>
           )}
       </Container>
     </Menu>
-  )
-};
+)
 
 export default Header;
