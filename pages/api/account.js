@@ -11,7 +11,8 @@ export default async (req, res) => {
 
   try {
     // authorize and sign token
-    const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+    const JSONres = JSON.parse(req.headers.authorization);
+    const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
     const user = await User.findOne({ _id: userId });
     if (user) {
       res.status(200).json(user);

@@ -47,7 +47,7 @@ const Header = ({ user }) => (
                 Account
               </Menu.Item>
             </Link>
-            <Link href="/signout">
+            <Link>
               <Menu.Item onClick={handleLogout} header >
                 <Icon name="sign out" size="large" />
                 Logout

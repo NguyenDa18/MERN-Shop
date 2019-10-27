@@ -1,7 +1,7 @@
 import App from 'next/app';
 import axios from 'axios';
 import { parseCookies, destroyCookie } from 'nookies'
-import { checkUserRole, redirectUser } from '../utils/auth'
+import { checkUserRole, redirectUser, syncLogout } from '../utils/auth'
 import baseUrl from '../utils/baseUrl'
 import Layout from '../components/_App/Layout';
 
@@ -45,6 +45,10 @@ class MyApp extends App {
     }
 
     return { pageProps }
+  }
+
+  componentDidMount() {
+    window.addEventListener('storage', syncLogout)
   }
 
   render() {
