@@ -29,4 +29,3 @@ const ProductSchema = new mongoose.Schema({
 
 // check if model exists or use existing one
 export default mongoose.models.Product || mongoose.model('Product', ProductSchema);
-// export default mongoose.model('Product', ProductSchema);

@@ -10,6 +10,9 @@ connectDb();
 export default async (req, res) => {
   const { email, password } = req.body;
   try {
+    if (!isEmail(email)) return res.status(422).send('Please use a valid email.');
+    if (!isLength(password, { min: 6 })) return res.status(422).send('Password must be at least 6 characters');
+
     // 1. Check to see user exists
     const user = await User.findOne({ email }).select('+password');
 

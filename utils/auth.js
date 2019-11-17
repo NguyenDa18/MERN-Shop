@@ -14,7 +14,6 @@ export const handleLogout = () => {
 
 export const syncLogout = (event) => {
   if (event.key === 'logout') {
-    console.log('logged out from storage');
     Router.push('/login');
   }
 };

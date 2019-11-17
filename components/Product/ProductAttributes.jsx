@@ -21,7 +21,7 @@ const ProductAttributes = ({ description, _id, user }) => {
     <Header as="h3">About this product</Header>
     <p>{description}</p>
     {
-      isRootOrAdmin(user) && (
+      user && isRootOrAdmin(user) && (
         <>
         <Button icon="trash alternate outline"
         color="red"

@@ -10,7 +10,7 @@ import baseUrl from '../utils/baseUrl'
 const Product = ({ product, user }) => (
   <div>
     <h1>{product.name}</h1>
-    <ProductSummary {...product} />
+    <ProductSummary user={user} {...product} />
     <Divider />
     <ProductAttributes user={user} {...product} />
   </div>
