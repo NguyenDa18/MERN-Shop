@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import { Input } from 'semantic-ui-react'
@@ -12,6 +12,16 @@ const AddProductToCart = ({ user, productId }) => {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    let timeout
+    if (success) {
+      timeout = setTimeout(() => setSuccess(false), 3000)
+    }
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [success])
 
   const handleAddProductToCart = async () => {
     try {
@@ -42,22 +52,22 @@ const AddProductToCart = ({ user, productId }) => {
     action={user && success ? {
       color: 'blue',
       content: 'Item Added!',
-      icon: 'plus cart',
+      icon: 'smile outline',
       disabled: true
-    } : user ? {
-      color: 'orange',
-      content: 'Add to Cart',
-      icon: 'plus cart',
-      loading,
-      disabled: loading,
-      onClick: () => handleAddProductToCart()
-    } : {
-      color: 'blue',
-      content: 'Sign Up to Purchase',
-      icon: 'signup',
-      onClick: () => router.push('/signup')
-    }}>
-    </Input>
+      } : user ? {
+        color: 'orange',
+        content: 'Add to Cart',
+        icon: 'plus cart',
+        loading: loading,
+        disabled: loading,
+        onClick: () => handleAddProductToCart()
+      } : {
+        color: 'blue',
+        content: 'Sign Up to Purchase',
+        icon: 'signup',
+        onClick: () => router.push('/signup')
+      }}
+    />
   )
 }
 
