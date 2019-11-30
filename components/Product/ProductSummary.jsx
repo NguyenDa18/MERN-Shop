@@ -1,4 +1,5 @@
 import { Item, Label } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 import AddProductToCart from './AddProductToCart'
 
 const ProductSummary = ({ name, mediaUrl, _id, price, sku, user }) => (
@@ -12,11 +13,20 @@ const ProductSummary = ({ name, mediaUrl, _id, price, sku, user }) => (
             <Label>SKU: {sku}</Label>
           </Item.Description>
           <Item.Extra>
-            <AddProductToCart user={user} product={_id} />
+            <AddProductToCart user={user} productId={_id} />
           </Item.Extra>
         </Item.Content>
       </Item>
     </Item.Group>
   );
+
+  ProductSummary.propTypes = {
+    user: PropTypes.object.isRequired,
+    name: PropTypes.string,
+    mediaUrl: PropTypes.string,
+    _id: PropTypes.string,
+    price: PropTypes.string,
+    sku: PropTypes.string
+  }
 
 export default ProductSummary;
