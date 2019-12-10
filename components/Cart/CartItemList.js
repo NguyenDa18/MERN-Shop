@@ -3,7 +3,7 @@ import { Header, Card, Segment, Button, Icon, Item } from 'semantic-ui-react'
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 
-function CartItemList({ user, products }) {
+function CartItemList({ user, products, handleRemoveFromCart }) {
   const router = useRouter()
 
   const mapCartProductsToItems = (products) => {
@@ -16,14 +16,13 @@ function CartItemList({ user, products }) {
       ),
       image: (<Item.Image size="small" src={p.product.mediaUrl} />),
       meta: `${p.quantity} x ${p.product.price}`,
-      fluid: true,
+      fluid: 'true',
       extra: (
         <Button
           animated
-          icon='remove'
           floated='right'
           color="red"
-          onClick={() => console.log(p.product._id)}
+          onClick={() => handleRemoveFromCart(p.product._id)}
         >
           <Button.Content visible>Remove</Button.Content>
           <Button.Content hidden>
@@ -60,10 +59,9 @@ function CartItemList({ user, products }) {
   else {
     return (
       <Item.Group
-        stackable
+        unstackable={false}
         divided
-        itemsPerRow={3}
-        centered
+        centered="true"
         items={mapCartProductsToItems(products)} />
     )
   }
