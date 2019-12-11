@@ -27,7 +27,6 @@ function Signup() {
   const handleChange = (e) => {
     const { name, value } = e.target
     setUser(prevState => ({ ...prevState, [name]: value }))
-
   }
 
   const handleSubmit = async (e) => {
