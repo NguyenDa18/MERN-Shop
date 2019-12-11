@@ -3,7 +3,7 @@ import { Header, Card, Segment, Button, Icon, Item } from 'semantic-ui-react'
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 
-function CartItemList({ user, products, handleRemoveFromCart }) {
+const CartItemList = ({ user, products, handleRemoveFromCart }) => {
   const router = useRouter()
 
   const mapCartProductsToItems = (products) => {

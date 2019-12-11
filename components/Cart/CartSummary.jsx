@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Button, Segment, Divider } from 'semantic-ui-react'
 import calculateCartTotal from '../../utils/calculateCartTotal'
 
-function CartSummary({ products }) {
+const CartSummary = ({ products }) => {
   const [cartAmount, setCartAmount] = useState(0)
   const [paymentAmount, setPaymentAmount] = useState(0)
   const [cartEmpty, setCartEmpty] = useState(false)
