@@ -21,11 +21,11 @@ const ProductSummary = ({ name, mediaUrl, _id, price, sku, user }) => (
   );
 
   ProductSummary.propTypes = {
-    user: PropTypes.object.isRequired,
+    user: PropTypes.object,
     name: PropTypes.string,
     mediaUrl: PropTypes.string,
     _id: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.number,
     sku: PropTypes.string
   }
 

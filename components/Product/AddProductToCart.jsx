@@ -38,7 +38,6 @@ const AddProductToCart = ({ user, productId }) => {
     }
     finally {
       setLoading(false)
-
     }
   }
 
@@ -72,7 +71,7 @@ const AddProductToCart = ({ user, productId }) => {
 }
 
 AddProductToCart.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object,
   productId: PropTypes.string.isRequired
 
 }

@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "cypress": "npx cypress open"
   },
-  "keywords": [],
+  "keywords": ["Ecommerce", "Next.JS", "React", "Codeartistry"],
   "author": "Danh Nguyen",
   "license": "ISC",
   "dependencies": {
@@ -31,6 +32,7 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
+    "cypress": "^3.7.0",
     "eslint": "^6.4.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
