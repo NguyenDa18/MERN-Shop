@@ -21,6 +21,20 @@ function Cart({ products, user }) {
     setCartProducts(res.data)
   }
 
+  const handleCheckout = async (paymentData) => {
+    try {
+      const url = `${baseUrl}/api/checkout`
+      const token = cookie.get('token')
+      const payload = { paymentData }
+      const headers = { headers: { Authorization: token } }
+      const res = await axios.post(url, payload, headers)
+    }
+    catch (error) {
+      console.error(error)
+    }
+
+  }
+
   return (
     <Segment>
       <CartItemList
@@ -28,7 +42,7 @@ function Cart({ products, user }) {
         products={cartProducts}
         handleRemoveFromCart={handleRemoveFromCart}
       />
-      <CartSummary products={cartProducts} />
+      <CartSummary products={cartProducts} handleCheckout={handleCheckout} />
     </Segment>
   );
 }
