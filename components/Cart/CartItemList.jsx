@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import { Header, Card, Segment, Button, Icon, Item } from 'semantic-ui-react'
+import { Header, Message, Segment, Button, Icon, Item } from 'semantic-ui-react'
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 
-const CartItemList = ({ user, products, handleRemoveFromCart }) => {
+const CartItemList = ({ user, products, handleRemoveFromCart, success }) => {
   const router = useRouter()
 
   const mapCartProductsToItems = (products) => {
@@ -33,6 +33,17 @@ const CartItemList = ({ user, products, handleRemoveFromCart }) => {
     }))
   }
 
+  if (success) {
+    return (
+      <Message 
+        success
+        header="Success!"
+        content="Your order and payment have been accepted"
+        icon="star outline"
+      />
+    )
+  }
+
   if (products.length === 0) {
     return (
       <Segment secondary color="teal" inverted textAlign="center" placeholder>
@@ -40,19 +51,17 @@ const CartItemList = ({ user, products, handleRemoveFromCart }) => {
           <Icon name="shopping basket" />
           No items in your cart ... yet. <Link href="/"><a> Add some!</a></Link>
         </Header>
+        <div>
         {user ? (
-          <div>
             <Button color="orange" onClick={() => router.push('/')}>
               View Products
             </Button>
-          </div>
         ) : (
-            <div>
               <Button color="blue" onClick={() => router.push('/login')}>
                 Login to Add Products
               </Button>
-            </div>
           )}
+          </div>
       </Segment>
     );
   }
