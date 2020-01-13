@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import { Header, Message, Segment, Button, Icon, Item } from 'semantic-ui-react'
-import Link from 'next/link';
 import { useRouter } from 'next/router'
 
 const CartItemList = ({ user, products, handleRemoveFromCart, success }) => {
@@ -49,7 +48,7 @@ const CartItemList = ({ user, products, handleRemoveFromCart, success }) => {
       <Segment secondary color="teal" inverted textAlign="center" placeholder>
         <Header icon>
           <Icon name="shopping basket" />
-          No items in your cart ... yet. <Link href="/"><a> Add some!</a></Link>
+          No items in your cart ... yet. 😉
         </Header>
         <div>
         {user ? (
