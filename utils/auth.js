@@ -1,5 +1,13 @@
 import cookie from 'js-cookie';
+import jwt from 'jsonwebtoken';
 import Router from 'next/router';
+
+export const getVerifiedUserId = (authHeaders) => {
+  // Verify and get user id from token
+  const JSONres = JSON.parse(authHeaders);
+  const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
+  return userId;
+};
 
 export const handleLogin = (token) => {
   cookie.set('token', token);

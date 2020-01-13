@@ -4,6 +4,7 @@ import uuidv4 from 'uuid/v4';
 import jwt from 'jsonwebtoken';
 import Cart from '../../models/Cart';
 import Order from '../../models/Order';
+import { getVerifiedUserId } from '../../utils/auth';
 import calculateCartTotal from '../../utils/calculateCartTotal';
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
@@ -12,9 +13,7 @@ export default async (req, res) => {
     const { paymentData } = req.body;
 
     try {
-        // Verify and get user id from token
-        const JSONres = JSON.parse(req.headers.authorization);
-        const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
+        const userId = getVerifiedUserId(req.headers.authorization);
 
         // Find cart based on user id, populate it
         const cart = await Cart.findOne({ user: userId }).populate({
@@ -50,10 +49,10 @@ export default async (req, res) => {
             customer,
             description: `Checkout | ${paymentData.email} | ${paymentData.id}`,
         },
-            {
-                // prevent double charge case
-                idempotency_key: uuidv4(),
-            });
+        {
+            // prevent double charge case
+            idempotency_key: uuidv4(),
+        });
 
         // Add order data to db
         await new Order({

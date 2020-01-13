@@ -16,7 +16,7 @@ const isActive = (route) => {
 }
 
 const Header = ({ user }) => (
-    <Menu id="menu" stackable fluid inverted compact widths={4}>
+    <Menu id="menu" stackable fluid inverted compact widths={5}>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>
             <Image size="mini" src="/static/logo.svg" style={{ marginRight: '1em' }} />

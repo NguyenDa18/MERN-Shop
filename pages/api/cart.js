@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import Cart from '../../models/Cart';
 import connectDb from '../../utils/connectDb';
+import { getVerifiedUserId } from '../../utils/auth';
 
 const { ObjectId } = mongoose.Types;
 
@@ -13,8 +14,7 @@ const handleGetRequest = async (req, res) => {
   }
 
   try {
-    const JSONres = JSON.parse(req.headers.authorization);
-    const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
+    const userId = getVerifiedUserId(req.headers.authorization);
     const cart = await Cart.findOne({ user: userId }).populate({
       path: 'products.product',
       model: 'Product',
@@ -32,8 +32,7 @@ const handlePutRequest = async (req, res) => {
     res.status(401).send('No authorization token');
   }
   try {
-    const JSONres = JSON.parse(req.headers.authorization);
-    const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
+    const userId = getVerifiedUserId(req.headers.authorization);
 
     // Get user cart based on userId
     const cart = await Cart.findOne({ user: userId });
@@ -66,8 +65,7 @@ const handleDeleteRequest = async (req, res) => {
   }
 
   try {
-    const JSONres = JSON.parse(req.headers.authorization);
-    const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
+    const userId = getVerifiedUserId(req.headers.authorization);
     const cart = await Cart.findOneAndUpdate(
       { user: userId },
       { $pull: { products: { product: productId } } },
