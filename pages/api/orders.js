@@ -8,7 +8,7 @@ connectDb();
 export default async (req, res) => {
   try {
     const userId = getVerifiedUserId(req.headers.authorization);
-    const orders = await Order.find({ user: userId }).sort({ createdAt: 'descending' }).populate({
+    const orders = await Order.find({ user: userId }).sort({ createdAt: 'desc' }).populate({
       path: 'products.product',
       model: 'Product',
     });

@@ -1,5 +1,5 @@
 import { Header, Accordion, Label, Segment, Icon, Button, List, Image } from 'semantic-ui-react'
-import { Link } from 'next/link' 
+import formatDate from '../../utils/formatDate'
 import { useRouter } from 'next/router'
 
 const AccountOrders = ({ orders }) => {
@@ -9,7 +9,7 @@ const AccountOrders = ({ orders }) => {
     return orders.map(order => ({
       key: order._id,
       title: {
-        content: <Label color="blue" ribbon content={order.createdAt} /> 
+        content: <Label color="blue" ribbon content={formatDate(order.createdAt)} /> 
       },
       content: {
         content: (

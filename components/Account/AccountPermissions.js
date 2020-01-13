@@ -3,6 +3,7 @@ import { Header, Checkbox, Table, Icon, Label } from 'semantic-ui-react'
 import axios from 'axios'
 import baseUrl from '../../utils/baseUrl'
 import { isAdmin } from '../../utils/auth'
+import formatDate from '../../utils/formatDate'
 import cookie from 'js-cookie'
 
 const UserPermission = ({ user }) => {
@@ -39,8 +40,8 @@ const UserPermission = ({ user }) => {
         </Table.Cell>
         <Table.Cell>{user.name}</Table.Cell>
         <Table.Cell>{user.email}</Table.Cell>
-        <Table.Cell>{user.createdAt}</Table.Cell>
-        <Table.Cell>{user.updatedAt}</Table.Cell>
+        <Table.Cell>{formatDate(user.createdAt)}</Table.Cell>
+        <Table.Cell>{formatDate(user.updatedAt)}</Table.Cell>
         <Table.Cell>
           <Label ribbon="right" color={admin ? "green" : "teal"}>
             {admin ? "admin" : "user"}

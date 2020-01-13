@@ -8,7 +8,7 @@ export default async (req, res) => {
     const userId = getVerifiedUserId(req.headers.authorization);
 
     // find users not equal to current user
-    const users = await User.find({ _id: { $ne: userId } });
+    const users = await User.find({ _id: { $ne: userId } }).sort({ role: 'asc' });
     res.status(200).json(users);
   } catch (err) {
     console.error(err);
