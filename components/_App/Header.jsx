@@ -1,5 +1,5 @@
 import {
-  Menu, Container, Image, Icon,
+  Menu, Image, Icon,
 } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router'

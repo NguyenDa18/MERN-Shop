@@ -4,7 +4,7 @@ import AccountPermissions from '../components/Account/AccountPermissions'
 import { parseCookies } from 'nookies'
 import baseUrl from '../utils/baseUrl'
 import { isRoot } from '../utils/auth'
-import Axios from 'axios'
+import axios from 'axios'
 
 function Account({ user, orders }) {
   return (
@@ -21,7 +21,7 @@ Account.getInitialProps = async ctx => {
   if (!token) return { orders: [] }
   const payload = { headers: { Authorization: token }}
   const url = `${baseUrl}/api/orders`
-  const response = await Axios.get(url, payload)
+  const response = await axios.get(url, payload)
   return response.data
 }
 

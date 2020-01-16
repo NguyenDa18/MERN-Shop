@@ -1,4 +1,5 @@
 ## MERN Shop
+### Based on MERN Stack - The Complete Guide course by Reed Barger
 
 ## Initial Steps
 - Run `npm i` or `yarn` to install dependencies
@@ -7,18 +8,24 @@
     - Add MongoDB Cloud Atlas connection string
 - Run `npm run dev`
 
+## Run E2E Tests
+- Run `npm run cypress` to start Cypress UI and view user story tests
+
 ## Details
 - Users sign up/login and are given a JWT token that is stored in their cookies
 - Token checked for specific role privileges
+- A quantity of items can be selected and added to cart
+- Checkout done with Stripe API, orders stored in MongoDB
+- Users can view their past order details in Account page
 
 ### Given Roles
 - User : given cart and checkout products
 - Admin : user privileges + modify products
-- Root : all admin privileges + power to choose admins
+- Root : all admin privileges + power to choose admins (Have access to AccountPermissions)
 
 ## Technologies
 - NEXT.js
 - React
-- Mongoose ORM
+- MongoDB & Mongoose ORM
 - Cloudinary API
 - Stripe API
