@@ -1,6 +1,6 @@
 import {  Label, List, Image } from 'semantic-ui-react'
 
-const OrderItem = ({ orderProduct }) => (
+const OrderItem = ({ orderProduct }) => orderProduct.product ? (
     <>
     <Image avatar src={orderProduct.product.mediaUrl} />
     <List.Content>
@@ -15,6 +15,12 @@ const OrderItem = ({ orderProduct }) => (
     </Label>
     </List.Content>
     </>
+) : (
+<List.Content>
+    <List.Description>
+        Product Not Available, Quantity: {orderProduct.quantity}
+    </List.Description>
+</List.Content>
 )
 
 export default OrderItem;
