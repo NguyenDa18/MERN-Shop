@@ -1,4 +1,3 @@
-import jwt from 'jsonwebtoken';
 import User from '../../models/User';
 import connectDb from '../../utils/connectDb';
 import { getVerifiedUserId } from '../../utils/auth';

@@ -6,15 +6,13 @@ import baseUrl from '../utils/baseUrl'
 import { isRoot } from '../utils/auth'
 import axios from 'axios'
 
-function Account({ user, orders }) {
-  return (
+const Account = ({ user, orders }) => (
     <>
       <AccountHeader {...user} />
       <AccountOrders orders={orders} />
       {isRoot(user) && <AccountPermissions currentUserId={user._id} />}
     </>
-  )
-}
+)
 
 Account.getInitialProps = async ctx => {
   const { token } = parseCookies(ctx)

@@ -4,14 +4,12 @@ import ProductList from '../components/Index/ProductList'
 import ProductPagination from '../components/Index/ProductPagination'
 import baseUrl from '../utils/baseUrl'
 
-const Home = ({ products, totalPages }) => {
-  return (
+const Home = ({ products, totalPages }) => (
     <>
       <ProductList products={products} />
       <ProductPagination totalPages={totalPages} />
     </>
-  )
-}
+)
 
 Home.getInitialProps = async ctx => {
   const page = ctx.query.page ? ctx.query.page : '1'
