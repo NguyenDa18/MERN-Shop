@@ -56,8 +56,7 @@ function CreateProduct() {
       const mediaUrl = await handleImageUpload()
       const url = `${baseUrl}/api/product`
       const payload = { ...product, mediaUrl }
-      const response = await axios.post(url, payload)
-      // console.log({ response })
+      await axios.post(url, payload)
       setMediaPreview('')
       setProduct(INITIAL_PRODUCT)
       setSuccess(true)

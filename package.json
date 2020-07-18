@@ -11,9 +11,10 @@
   },
   "keywords": [
     "Ecommerce",
-    "Next.JS",
+    "Next.js",
     "React",
-    "Codeartistry"
+    "Stripe",
+    "Cloudinary"
   ],
   "author": "Danh Nguyen",
   "license": "ISC",

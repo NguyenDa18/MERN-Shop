@@ -21,7 +21,6 @@ function Signup() {
   useEffect(() => {
     const isValid = Object.values(user).every(el => Boolean(el))
     isValid ? setDisabled(false) : setDisabled(true)
-
   }, [user])
 
   const handleChange = (e) => {
