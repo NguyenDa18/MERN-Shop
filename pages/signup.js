@@ -50,7 +50,7 @@ function Signup() {
 
   return (
     <>
-      <Message attached icon="settings" header="Sign up" content={`Create a new account ${process.env.MONGO_SRV}`} color="teal" />
+      <Message attached icon="settings" header="Sign up" content={`Create a new account`} color="teal" />
       <Form loading={loading} onSubmit={handleSubmit} error={Boolean(error)}>
         <Message
           error

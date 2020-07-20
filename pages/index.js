@@ -5,10 +5,10 @@ import ProductPagination from '../components/Index/ProductPagination'
 import baseUrl from '../utils/baseUrl'
 
 const Home = ({ products, totalPages }) => (
-    <>
-      <ProductList products={products} />
-      <ProductPagination totalPages={totalPages} />
-    </>
+  <>
+    <ProductList products={products} />
+    <ProductPagination totalPages={totalPages} />
+  </>
 )
 
 Home.getInitialProps = async ctx => {
