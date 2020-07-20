@@ -3,8 +3,6 @@ node_modules
 build/
 
 dist
-next.config.*
-next.config.js
 now.json
 .DS_Store
 .eslintrc.json
