@@ -7,3 +7,4 @@ next.config.js
 now.json
 .DS_Store
 .eslintrc.json
+.env.*
