@@ -7,6 +7,7 @@
     "dev": "next",
     "start": "next start",
     "build": "next build",
+    "export": "npm run build && next export",
     "cypress": "npx cypress open"
   },
   "keywords": [
