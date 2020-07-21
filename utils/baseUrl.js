@@ -1,3 +1,3 @@
-const baseUrl = process.env.NODE_ENV === 'production' ? process.env.DOMAIN_URL : 'http://localhost:3000';
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://mern-shop-demo.vercel.app' : 'http://localhost:3000';
 
 export default baseUrl;
