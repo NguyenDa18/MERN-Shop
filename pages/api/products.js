@@ -4,7 +4,7 @@ import connectDb from '../../utils/connectDb';
 connectDb();
 
 export default async (req, res) => {
-  const { page, size } = req.query;
+  const { page, size, searchQuery } = req.query;
   // Convert query strings to numbers
   const pageNum = Number(page);
   const pageSize = Number(size);
@@ -16,6 +16,13 @@ export default async (req, res) => {
   } else {
     const skips = pageSize * (pageNum - 1);
     products = await Product.find().skip(skips).limit(pageSize);
+  }
+
+  // Search Page
+  if (searchQuery) {
+    products = await Product.find({
+      name: { $regex: searchQuery, $options: 'i' },
+    });
   }
   res.status(200).json({ products, totalPages });
 };
