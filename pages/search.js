@@ -41,14 +41,14 @@ const Search = () => {
             </Form>
             {products.length > 0 ? (
                 <Segment>
-                    <h3 class="ui header centered">{products.length} products found!</h3>
+                    <h3 className="ui header centered">{products.length} products found!</h3>
                     <Card.Group stackable itemsPerRow="3" centered>
                         {mapProductsToItems(products)}
                     </Card.Group>
                 </Segment>
             ) : (
                     <Segment>
-                        <h3 class="ui header centered">{products.length} products found!</h3>
+                        <h3 className="ui header centered">{products.length} products found!</h3>
                     </Segment>
                 )}
         </div>
