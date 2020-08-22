@@ -1,8 +1,6 @@
 ## MERN Shop
 ### Based on MERN Stack - The Complete Guide course by Reed Barger
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/2f5b650a-c423-43b0-994d-4d930ca83c6d/deploy-status)](https://app.netlify.com/sites/mern-shop/deploys)
-
 ## Initial Steps
 - Run `npm i` or `yarn` to install dependencies
 - Add variables to next.config.js (create new one based on next.config_default.js)

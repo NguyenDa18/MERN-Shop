@@ -4,9 +4,6 @@ import Router from 'next/router';
 
 export const getVerifiedUserId = (authToken) => {
   // Verify and get user id from token
-  // const JSONres = JSON.parse(authHeaders);
-  // const { userId } = jwt.verify(JSONres.data, process.env.JWT_SECRET);
-
   const { userId } = jwt.verify(authToken, process.env.JWT_SECRET);
   return userId;
 };
