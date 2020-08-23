@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
@@ -29,13 +28,13 @@ export default async (req, res) => {
       return res.status(422).send(`User already exists with email ${email}`);
     }
     // 2. If not, hash pwd
-    const hash = await bcrypt.hash(password, 10);
+    // const hash = await bcrypt.hash(password, 10);
 
     // 3. Create user
     const newUser = await new User({
       name,
       email,
-      password: hash,
+      // password: hash,
     }).save();
 
     // 4. Create cart for new user

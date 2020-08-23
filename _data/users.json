@@ -1,0 +1,47 @@
+[
+    {
+      "name": "Admin Account",
+      "email": "admin@gmail.com",
+      "role": "user",
+      "password": "123456"
+    },
+    {
+      "name": "Publisher Account",
+      "email": "publisher@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "User Account",
+      "email": "user@gmail.com",
+      "role": "user",
+      "password": "123456"
+    },
+    {
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "role": "admin",
+      "password": "123456"
+    },
+    {
+      "name": "Kevin Smith",
+      "email": "kevin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "Mary Williams",
+      "email": "mary@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "Sasha Ryan",
+      "email": "sasha@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "Greg Harris",
+      "email": "greg@gmail.com",
+      "role": "user",
+      "password": "123456"
+    }
+  ]
+  

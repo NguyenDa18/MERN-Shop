@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Small Cotton Table",
+        "price": "423.00",
+        "sku": "MU83BKRP7555090036000633694NOI",
+        "description": "Dolor assumenda distinctio.",
+        "mediaUrl": "http://lorempixel.com/640/480/nightlife"
+    },
+    {
+        "name": "Incredible Frozen Table",
+        "price": "242.00",
+        "sku": "PT32030690521506800528468",
+        "description": "Veritatis repudiandae accusantium ea autem illo.",
+        "mediaUrl": "http://lorempixel.com/640/480/animals"
+    },
+    {
+        "name": "Intelligent Soft Soap",
+        "price": "415.00",
+        "sku": "QA27AHCZ490084099007911967462",
+        "description": "Modi veritatis fuga quas eius pariatur quisquam iusto facilis enim.",
+        "mediaUrl": "http://lorempixel.com/640/480/nightlife"
+    },
+    {
+        "name": "Sleek Wooden Pizza",
+        "price": "394.00",
+        "sku": "BG66RKDC67007273222D49",
+        "description": "Perferendis eum qui voluptatem eius deserunt ut earum a aliquam.",
+        "mediaUrl": "http://lorempixel.com/640/480/people"
+    },
+    {
+        "name": "Awesome Fresh Pizza",
+        "price": "565.00",
+        "sku": "GR280700278N6213LY04026JM39",
+        "description": "Expedita libero ut.",
+        "mediaUrl": "http://lorempixel.com/640/480/cats"
+    },
+    {
+        "name": "Licensed Metal Table",
+        "price": "864.00",
+        "sku": "IE32384780800440201789",
+        "description": "Sunt rerum quaerat.",
+        "mediaUrl": "http://lorempixel.com/640/480/business"
+    },
+    {
+        "name": "Incredible Wooden Pizza",
+        "price": "969.00",
+        "sku": "BA916789745710400233",
+        "description": "Harum delectus atque laboriosam ex voluptas dolorum in tempore et.",
+        "mediaUrl": "http://lorempixel.com/640/480/nature"
+    },
+    {
+        "name": "Tasty Concrete Fish",
+        "price": "139.00",
+        "sku": "MD3134666951F6TN67377854",
+        "description": "Quae sed in dolor enim.",
+        "mediaUrl": "http://lorempixel.com/640/480/technics"
+    },
+    {
+        "name": "Gorgeous Rubber Ball",
+        "price": "9.00",
+        "sku": "PL86011676944040340740309434",
+        "description": "Ab nobis laboriosam aspernatur illum repellendus ut.",
+        "mediaUrl": "http://lorempixel.com/640/480/nightlife"
+    },
+    {
+        "name": "Refined Steel Table",
+        "price": "126.00",
+        "sku": "BH62VVXS56880F3YE61697",
+        "description": "Mollitia perspiciatis adipisci optio iste ratione vel sed ex.",
+        "mediaUrl": "http://lorempixel.com/640/480/food"
+    }
+]
