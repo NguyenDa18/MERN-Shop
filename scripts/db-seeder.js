@@ -8,7 +8,7 @@ const Product = require('./models/Product');
 dotenv.config({ path: '../.env.local' });
 
 // Connect to DB
-mongoose.connect('mongodb+srv://shopuser:PexjIg691BxA97RA@mern-shop-api-qgf5p.mongodb.net/shop-db?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGO_SRV, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
