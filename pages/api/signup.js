@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
 import connectDb from '../../utils/connectDb';
@@ -28,13 +29,13 @@ export default async (req, res) => {
       return res.status(422).send(`User already exists with email ${email}`);
     }
     // 2. If not, hash pwd
-    // const hash = await bcrypt.hash(password, 10);
+    const hash = await bcrypt.hash(password, 10);
 
     // 3. Create user
     const newUser = await new User({
       name,
       email,
-      // password: hash,
+      password: hash,
     }).save();
 
     // 4. Create cart for new user
@@ -46,6 +47,6 @@ export default async (req, res) => {
     // 6. Send back token
     res.status(201).json(token);
   } catch (error) {
-    res.status(500).send('Error signup user. Try again later.');
+    res.status(500).send('Error signing up user. Try again later.');
   }
 };
