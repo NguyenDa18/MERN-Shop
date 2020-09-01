@@ -1,6 +1,11 @@
 ## MERN Shop
 ### Based on MERN Stack - The Complete Guide course by Reed Barger
 
+## Test on Live Site:
+- Create an account (email and password).
+- Add items to your cart.
+- Checkout: use one of Stripe's available [Test card numbers](https://stripe.com/docs/testing#cards), go through checkout process and you will see your purchase as a new order in your account.
+
 ## Initial Steps
 - Run `npm i` or `yarn` to install dependencies
 - Add variables to next.config.js (create new one based on next.config_default.js)
